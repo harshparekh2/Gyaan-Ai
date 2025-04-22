@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="projects img/7540436.jpg" alt="Foodizzz Logo">
+            <h1>Feasto</h1>
+        </div>
+       
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
+                <li class="dropdown">
+                    <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
+                    <div class="dropdown-content">
+                        <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
+                        <!-- <a href="#shop_details"><i class="fas fa-info-circle"></i> Shop Details</a> -->
+                        <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+                        <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="login.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#blog"><i class="fas fa-blog"></i> Blog</a>
+                    <div class="dropdown-content">
+                        <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a>
+                        <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Details</a>
+                    </div>
+                </li>
+                <li><a href="feedback.html"><i class="fas fa-comment-alt"></i> Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-container" id="cart">
+        <button class="close-cart" id="close-cart">&times;</button>
+        <h4>Your Cart</h4>
+        <div class="cart-item">
+            <img src="projects img/blog3.jpg" alt="Food Item">
+            <div>
+                <h5>Burger</h5>
+                <p>$5.99</p>
+            </div>
+            <button class="remove-item">Remove</button>
+        </div>
+        <div class="cart-item">
+            <img src="projects img/pizza.png" alt="Food Item">
+            <div>
+                <h5>Pizza</h5>
+                <p>$8.99</p>
+            </div>
+            <button class="remove-item">Remove</button>
+        </div>
+        <div class="cart-item">
+            <img src="projects img/bt1.jpg" alt="Food Item">
+            <div>
+                <h5>Pasta</h5>
+                <p>$7.49</p>
+            </div>
+            <button class="remove-item">Remove</button>
+        </div>
+        <div class="cart-total">Total: $22.47</div>
+        <button class="checkout-btn">Checkout</button>
+    </div>
+    <div class="overlay1" id="overlay1"></div>
+    
+    <script>
+       const cartBtn = document.getElementById("cart-btn");
+const cart = document.getElementById("cart");
+const closeCart = document.getElementById("close-cart");
+const cartItemsContainer = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
+const cartCount = document.getElementById("cart-count");
+
+let cartItems = []; // Array to store cart items
+
+cartBtn.addEventListener("click", () => {
+    cart.classList.add("active");
+});
+
+closeCart.addEventListener("click", () => {
+    cart.classList.remove("active");
+});
+
+// Function to add item to cart
+function addToCart(name, price, imgSrc) {
+    const item = { name, price, imgSrc };
+    cartItems.push(item);
+    updateCart();
+}
+
+// Function to update cart UI
+function updateCart() {
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    if (cartItems.length === 0) {
+        cartItemsContainer.innerHTML = `<p class="empty-cart">Your cart is empty</p>`;
+    } else {
+        cartItems.forEach((item, index) => {
+            total += item.price;
+            cartItemsContainer.innerHTML += `
+                <div class="cart-item">
+                    <img src="${item.imgSrc}" alt="${item.name}">
+                    <div>
+                        <h5>${item.name}</h5>
+                        <p>$${item.price.toFixed(2)}</p>
+                    </div>
+                    <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remove</button>
+                </div>
+            `;
+        });
+    }
+
+    cartTotal.textContent = total.toFixed(2);
+    cartCount.textContent = cartItems.length;
+}
+
+// Function to remove item from cart
+function removeFromCart(index) {
+    cartItems.splice(index, 1);
+    updateCart();
+}
+
+// Example Usage
+addToCart("Burger", 5.99, "food1.jpg");
+addToCart("Pizza", 8.99, "food2.jpg");
+addToCart("Pasta", 7.49, "food3.jpg");
+
+    </script>
+    <div class="intro">
+        <div class="intro-img">
+            <img src="projects img/DALL·E 2025-03-21 04.39.39 - A modern and stylish restaurant interior with a warm ambiance. The setting features a wooden bar counter with neatly arranged bottles, glassware, and .webp" alt="" srcset="">
+        </div>
+        <div class="intro-text">
+            Feasto Blog – A Taste of Stories, A Feast of Flavors! 
+            <p class="scroll-text">Scroll More <i class="fas fa-arrow-down"></i> </p>
+        </div>
+    </div>
+    <div class="about-blogs">
+        <div class="blogs-text">
+            <h1>From Our Blog</h1>
+            <p>Explore our blog for insightful articles, personal reflections, impactful resources, and ideas that inspire us at Feasto.</p>
+        </div>
+    <div class="blog">
+        <div class="blogs-img">
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-18 23.18.26 - A realistic and visually appealing poster featuring a modern coffee machine brewing a document like a PDF, symbolizing quick and efficient output. Flo.webp" alt="Espresso Blog">
+                <h4>Foodizzz | 17 March 2025</h4>
+                <p>Espresso: Brewing PDFs at Feasto, Faster Than You Can Say “Cappuccino”. Espresso is our open-source PDF generation and signing solution. It's fast, scalable, and available to the community.</p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-18 23.12.42 - A realistic and appealing poster featuring a simple, crispy paper dosa with multiple colorful chutneys in small bowls. Bold, professional text reads_ .webp" alt="Dosas Story">
+                <h4>Shuvra Saha | 11 March 2025</h4>
+                <p>Dosas and decades of deliciousness: The Shri Ganesh Bhavan story. Shri Ganesh Bhavan has grown from a humble hotel in Chennai to 10 outlets across the city.</p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-18 23.16.07 - A vibrant and appealing poster featuring idlis with a bowl of sambar, sprinkled with spices and herbs. Bold, playful text reads_ 'Idli, spice, and eve.webp" alt="Mysore Raman Idli">
+                <h4>Mukund Sharma | 4 February 2025</h4>
+                <p>Idli, spice, and everything nice—Mysore Raman Idli’s journey to success! Serving delicious South Indian dishes rooted in tradition.</p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 05.53.03 - A realistic promotional image featuring a successful Indian restaurant brand expanding globally. The background is a rich red with subtle spice illust.webp">
+                <h4>Sivam Darbar | 4 February 2025</h4>
+                The Big Brand Theory | Carving a spice trail from Tamil Nadu to 5+ countries
+                <p>
+                    Explore how the fusion of tradition and innovation shaped the creation of a legacy brand
+
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 05.57.46 - A realistic promotional image featuring two business owners of a successful gelato brand. They are standing together, both wearing matching polo shirt.webp">
+                <h4>Dhruv Soni | 4 February 2025</h4>
+                The Big Brand Theory | From trekking Himalayan slopes to raising Rs. 0.75 crores at Shark Tank: The story of Amore Gelato 
+                <p>Discover how the founders of Amore Gelato are bringing the true taste of Italian gelato to India!</p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.00.27 - A clean and modern promotional image for Feasto’s Plastic-Free Future Program. The design features eco-friendly packaging such as paper bags, biodegra.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                Introducing Feasto’s Plastic-Free Future Program for Restaurant Partners
+                <p>
+                    Recognizing restaurant partners for embracing plastic-free food delivery packaging options
+
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.02.25 - A professional and realistic promotional image for Feasto, featuring a successful entrepreneur in a formal suit standing confidently. The background h.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                The Big Brand Theory | From piano melodies to Chinese recipes: The Chowman Story
+                <p>
+                    Read more about the story of Chowman, a brand which is enchanting tastebuds with a flavorful and authentic take on Chinese cuisine
+                   
+
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.03.50 - A professional and modern promotional image for Feasto’s Apache Flink Journey, featuring three vibrant, futuristic squirrels with glowing tails holdin.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                Apache Flink Journey  Feasto: From Inception to Innovation
+                <p>
+                    How we built a self-serve stream processing platform to empower real-time analytics
+                
+
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.05.14 - A professional and modern promotional image for Feasto’s brand story. The background is deep red with subtle food-related illustrations. At the top, t.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                The Big Brand Theory | How Ma’s recipes ended up building one of India’s leading Burmese specialty cuisine brands
+                <p>
+                    Discover how childhood friends Ankit Gupta and Chirag Chhajer brought Burma’s hidden treasures to India through a unique dining experience.
+                    
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.06.22 - A professional and modern promotional image for Feasto’s Food Rescue initiative. The image should have a sleek, clean, and engaging design, featuring .webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                Food Rescue: An initiative to minimize food wastage
+                <p>
+                    Read more about our Food Rescue: Our latest initiative to reduce food wastage
+                    
+
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.07.31 - A professional and modern promotional image for Feasto's _Scheduled Orders_ feature. The design should include bold, clean typography announcing _Sche.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                Plan ahead with Feasto’s Order Scheduling feature: Convenience at your fingertips
+                <p>
+                    Read on to discover how Order Scheduling is transforming the way customers order and bringing benefits to our restaurant partners.
+                    
+                </p>
+            </div>
+            <div class="blogs-cards">
+                <img src="projects img/DALL·E 2025-03-21 06.33.44 - A professional and modern promotional image for Feasto, introducing a simplified growth playbook for new restaurants. The design features a vibrant bl.webp">
+                <h4>Shuvra Saha | 4 February 2025</h4>
+                Setting up new restaurants on Feasto is simpler and faster now!
+                <p>
+                    Read more about how we are ensuring success for new restaurant partners by providing a growth playbook for the first 90 days of listing their restauran
+                    
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><img src="projects img/7540436.jpg" alt="Foodie Logo"> Feasto</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dictumst faucibus ac eget nisl augue.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <!-- <li><a href="#">Careers</a></li> -->
+                        <li><a href="blog.html">Blog</a></li>
+                        <!-- <li><a href="#">Work With Us</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="dinout.html">Restaurants</a></li>
+                        <!-- <li><a href="#">Reviews</a></li> -->
+                        <li><a href="festoshoppage.html">Order Food</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="festoshoppage.html">Online Order</a></li>
+                        <!-- <li><a href="#">Pre-Reservation</a></li> -->
+                        <!-- <li><a href="#">24/7 Services</a></li> -->
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="newsletter">
+                <h3>Join Our Newsletter</h3>
+                <input type="email" placeholder="Foodizzz@gmail.com">
+                <button type="submit"><i class="fas fa-envelope"></i>SEND</button>
+                <p>Will send you weekly updates for your better finance management.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feasto. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <!-- Visa -->
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa" width="50" height="30">
+            
+                <!-- MasterCard -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" width="50" height="30">
+            
+                <!-- Apple Pay -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" width="30" height="30">
+            
+                <!-- PayPal -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" width="50" height="30">
+            
+            </div>
+            
+            
+        </div>
+    </footer>
+    
+</body>
+</html>

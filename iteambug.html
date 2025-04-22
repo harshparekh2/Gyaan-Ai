@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Item Detail | Feasto</title>
+    <link rel="stylesheet" href="iteam.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/55" alt="Feasto Logo">
+            <h1>Feasto</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
+                <li class="dropdown">
+                    <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
+                    <div class="dropdown-content">
+                        <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
+                        <!-- <a href="#"><i class="fas fa-info-circle"></i> Shop Details</a> -->
+                        <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+                        <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="register.html"><i class="fas fa-user-plus"></i>Sign Up</a>
+                    </div>
+                </li>
+                <li><a href="#" id="cartToggle"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <button class="close-cart">&times;</button>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary" id="cartSummary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery:</span>
+                <span id="cartDelivery">$2.99</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <button class="btn btn-outline" id="clearCart">Clear Cart</button>
+            <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay for cart panel -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content - Product Detail -->
+    <div id="productPage">
+        <main class="item-detail-container">
+            <div class="breadcrumb">
+                <a href="#home">Home</a> / 
+                <a href="#shop">Shop</a> / 
+                <span>Food Item Detail</span>
+            </div>
+
+            <section class="item-detail">
+                <div class="item-image">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Delicious Food Item">
+                    <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                    <button class="favorite"><i class="far fa-heart"></i></button>
+                </div>
+                <div class="item-info">
+                    <div class="item-tag">Bestseller</div>
+                    <h1>Delicious Food Item</h1>
+                    <div class="item-meta">
+                        <span><i class="fas fa-clock"></i> 20-30 min</span>
+                        <span><i class="fas fa-utensils"></i> Italian</span>
+                    </div>
+                    <div class="item-price">
+                        <span class="current-price">$12.99</span>
+                        <span class="original-price">$15.99</span>
+                        <span class="discount">20% OFF</span>
+                    </div>
+                    <div class="item-description">
+                        <h3>Description</h3>
+                        <p>This delicious food item is made with the finest ingredients, carefully selected to provide an exceptional taste experience. Our chefs prepare each dish with passion and attention to detail, ensuring that every bite is a delight for your taste buds.</p>
+                    </div>
+                    <div class="item-options">
+                        <h3>Options</h3>
+                        <div class="option-group">
+                            <label class="option">
+                                <input type="radio" name="size" value="small" checked data-price="12.99">
+                                <span class="option-text">Small</span>
+                                <span class="option-price">$12.99</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="size" value="medium" data-price="14.99">
+                                <span class="option-text">Medium</span>
+                                <span class="option-price">$14.99</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="size" value="large" data-price="16.99">
+                                <span class="option-text">Large</span>
+                                <span class="option-price">$16.99</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="item-quantity">
+                        <h3>Quantity</h3>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10" class="quantity-input" id="quantityInput">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="btn btn-outline buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="related-items">
+                <div class="section-header">
+                    <h2>You May Also Like</h2>
+                    <p>Other delicious options you might enjoy</p>
+                </div>
+                <div class="items-grid">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="Related Food Item 1">
+                            <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                            <button class="favorite"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-tag">Popular</div>
+                            <h3>Food Item 1</h3>
+                            <div class="item-meta">
+                                <span><i class="fas fa-utensils"></i> Italian</span>
+                            </div>
+                            <div class="item-price">
+                                <span class="current-price">$10.99</span>
+                            </div>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Related Food Item 2">
+                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                            <button class="favorite"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-tag">New</div>
+                            <h3>Food Item 2</h3>
+                            <div class="item-meta">
+                                <span><i class="fas fa-utensils"></i> Mexican</span>
+                            </div>
+                            <div class="item-price">
+                                <span class="current-price">$11.99</span>
+                            </div>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Related Food Item 3">
+                            <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                            <button class="favorite"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-tag">Spicy</div>
+                            <h3>Food Item 3</h3>
+                            <div class="item-meta">
+                                <span><i class="fas fa-utensils"></i> Indian</span>
+                            </div>
+                            <div class="item-price">
+                                <span class="current-price">$13.99</span>
+                            </div>
+                            <button class="btn btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Checkout Page -->
+    <div id="checkoutPage" style="display: none;">
+        <div class="breadcrumb" style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
+            <a href="#home">Home</a> / 
+            <span>Checkout</span>
+        </div>
+
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <div class="checkout-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>Delivery Address</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" class="form-control" placeholder="Enter your address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" class="form-control" placeholder="Enter your city">
+                        </div>
+                        <div class="form-group">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" class="form-control" placeholder="Enter ZIP code">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit Card</span>
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <span>PayPal</span>
+                        </div>
+                        <div class="payment-method" data-method="apple">
+                            <i class="fab fa-apple-pay"></i>
+                            <span>Apple Pay</span>
+                        </div>
+                    </div>
+
+                    <div id="card-payment-form">
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" class="form-control" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Name on Card</label>
+                            <input type="text" id="card-name" class="form-control" placeholder="Enter name on card">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <div class="order-items" id="orderItems">
+                    <!-- Order items will be dynamically added here -->
+                </div>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="orderSubtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%):</span>
+                    <span id="orderTax">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery:</span>
+                    <span id="orderDelivery">$2.99</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="orderTotal">$0.00</span>
+                </div>
+                <button class="btn btn-primary" id="placeOrderBtn">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="order-notification" id="orderNotification">
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>Item Added to Cart!</h3>
+                <p>Your item has been added to the cart successfully.</p>
+            </div>
+            <div class="notification-actions">
+                <button class="btn btn-outline continue-shopping">Continue Shopping</button>
+                <button class="btn btn-primary view-cart">View Cart</button>
+            </div>
+            <button class="close-notification"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Order Success Notification -->
+    <div class="order-notification" id="orderSuccessNotification">
+        <div class="notification-content">
+            <div class="notification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="notification-text">
+                <h3>Order Placed Successfully!</h3>
+                <p>Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+            </div>
+            <div class="notification-actions">
+                <button class="btn btn-primary" id="backToHomeBtn">Back to Home</button>
+            </div>
+            <button class="close-notification"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><img src="https://via.placeholder.com/30" alt="Feasto Logo"> Feasto</h2>
+                <p>Delicious food delivered to your doorstep. Explore our wide range of cuisines and enjoy the best dining experience.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="dinout.html">Restaurants</a></li>
+                        <li><a href="festoshoppage.html">Menu</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="festoshoppage.html">Online Order</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h3>Join Our Newsletter</h3>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
+                <p>Get weekly updates for new food items and offers.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feasto. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <img src="https://via.placeholder.com/50x30" alt="Visa">
+                <img src="https://via.placeholder.com/50x30" alt="MasterCard">
+                <img src="https://via.placeholder.com/50x30" alt="Apple Pay">
+                <img src="https://via.placeholder.com/50x30" alt="PayPal">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Shopping Cart Class
+        class ShoppingCart {
+            constructor() {
+                this.items = JSON.parse(localStorage.getItem("cart")) || [];
+                this.deliveryFee = 2.99;
+                this.taxRate = 0.1; // 10% tax rate
+            }
+
+            // Add item to cart
+            addItem(item) {
+                const existingItemIndex = this.items.findIndex((i) => i.id === item.id && i.size === item.size);
+
+                if (existingItemIndex > -1) {
+                    this.items[existingItemIndex].quantity += item.quantity;
+                } else {
+                    this.items.push(item);
+                }
+
+                this.saveCart();
+                this.updateCartCount();
+                return this.items;
+            }
+
+            // Remove item from cart
+            removeItem(index) {
+                this.items.splice(index, 1);
+                this.saveCart();
+                this.updateCartCount();
+                return this.items;
+            }
+
+            // Update item quantity
+            updateQuantity(index, quantity) {
+                if (quantity <= 0) {
+                    return this.removeItem(index);
+                }
+
+                this.items[index].quantity = quantity;
+                this.saveCart();
+                this.updateCartCount();
+                return this.items;
+            }
+
+            // Clear cart
+            clearCart() {
+                this.items = [];
+                this.saveCart();
+                this.updateCartCount();
+                return this.items;
+            }
+
+            // Calculate subtotal
+            calculateSubtotal() {
+                return this.items.reduce((total, item) => {
+                    return total + item.price * item.quantity;
+                }, 0);
+            }
+
+            // Calculate tax
+            calculateTax() {
+                return this.calculateSubtotal() * this.taxRate;
+            }
+
+            // Calculate total
+            calculateTotal() {
+                return this.calculateSubtotal() + this.calculateTax() + this.deliveryFee;
+            }
+
+            // Save cart to localStorage
+            saveCart() {
+                localStorage.setItem("cart", JSON.stringify(this.items));
+            }
+
+            // Update cart count in UI
+            updateCartCount() {
+                const cartCountElement = document.querySelector(".cart-count");
+                if (cartCountElement) {
+                    const itemCount = this.items.reduce((count, item) => count + item.quantity, 0);
+                    cartCountElement.textContent = itemCount;
+                }
+            }
+
+            // Render cart items in UI
+            renderCart() {
+                const cartItemsContainer = document.getElementById("cartItems");
+                const cartSubtotalElement = document.getElementById("cartSubtotal");
+                const cartTaxElement = document.getElementById("cartTax");
+                const cartDeliveryElement = document.getElementById("cartDelivery");
+                const cartTotalElement = document.getElementById("cartTotal");
+
+                if (!cartItemsContainer) return;
+
+                // Clear cart container
+                cartItemsContainer.innerHTML = "";
+
+                if (this.items.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                        <div class="empty-cart-message">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Your cart is empty</p>
+                            <button class="btn btn-primary" id="startShoppingBtn">Start Shopping</button>
+                        </div>
+                    `;
+
+                    // Hide summary and footer when cart is empty
+                    document.getElementById("cartSummary").style.display = "none";
+                    document.querySelector(".cart-footer").style.display = "none";
+
+                    // Add event listener to start shopping button
+                    const startShoppingBtn = document.getElementById("startShoppingBtn");
+                    if (startShoppingBtn) {
+                        startShoppingBtn.addEventListener("click", () => {
+                            document.getElementById("cartPanel").classList.remove("open");
+                            document.getElementById("overlay").classList.remove("active");
+                        });
+                    }
+
+                    return;
+                }
+
+                // Show summary and footer when cart has items
+                document.getElementById("cartSummary").style.display = "block";
+                document.querySelector(".cart-footer").style.display = "flex";
+
+                // Render each cart item
+                this.items.forEach((item, index) => {
+                    const cartItemElement = document.createElement("div");
+                    cartItemElement.className = "cart-item";
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h4>${item.name}</h4>
+                            <p>${item.size}</p>
+                            <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="cart-quantity-btn minus" data-index="${index}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="cart-quantity-btn plus" data-index="${index}">+</button>
+                            </div>
+                        </div>
+                        <button class="cart-item-remove" data-index="${index}">&times;</button>
+                    `;
+
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+
+                // Update cart summary
+                const subtotal = this.calculateSubtotal();
+                const tax = this.calculateTax();
+                const total = this.calculateTotal();
+
+                cartSubtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                cartTaxElement.textContent = `$${tax.toFixed(2)}`;
+                cartDeliveryElement.textContent = `$${this.deliveryFee.toFixed(2)}`;
+                cartTotalElement.textContent = `$${total.toFixed(2)}`;
+
+                // Add event listeners to quantity buttons and remove buttons
+                const minusButtons = document.querySelectorAll(".cart-quantity-btn.minus");
+                const plusButtons = document.querySelectorAll(".cart-quantity-btn.plus");
+                const removeButtons = document.querySelectorAll(".cart-item-remove");
+
+                minusButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const index = Number.parseInt(button.getAttribute("data-index"));
+                        this.updateQuantity(index, this.items[index].quantity - 1);
+                        this.renderCart();
+                    });
+                });
+
+                plusButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const index = Number.parseInt(button.getAttribute("data-index"));
+                        this.updateQuantity(index, this.items[index].quantity + 1);
+                        this.renderCart();
+                    });
+                });
+
+                removeButtons.forEach((button) => {
+                    button.addEventListener("click", () => {
+                        const index = Number.parseInt(button.getAttribute("data-index"));
+                        this.removeItem(index);
+                        this.renderCart();
+                    });
+                });
+            }
+
+            // Render order items in checkout page
+            renderOrderItems() {
+                const orderItemsContainer = document.getElementById("orderItems");
+                const orderSubtotalElement = document.getElementById("orderSubtotal");
+                const orderTaxElement = document.getElementById("orderTax");
+                const orderDeliveryElement = document.getElementById("orderDelivery");
+                const orderTotalElement = document.getElementById("orderTotal");
+                const placeOrderBtn = document.getElementById("placeOrderBtn");
+
+                if (!orderItemsContainer) return;
+
+                // Clear container
+                orderItemsContainer.innerHTML = "";
+
+                if (this.items.length === 0) {
+                    orderItemsContainer.innerHTML = "<p>Your cart is empty. Please add items to your cart.</p>";
+                    placeOrderBtn.disabled = true;
+                    return;
+                }
+
+                placeOrderBtn.disabled = false;
+
+                // Render each item
+                this.items.forEach(item => {
+                    const orderItemElement = document.createElement("div");
+                    orderItemElement.className = "order-item";
+                    orderItemElement.innerHTML = `
+                        <div class="order-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="order-item-details">
+                            <h4>${item.name}</h4>
+                            <p>${item.size} × ${item.quantity}</p>
+                            <div class="order-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                        </div>
+                    `;
+
+                    orderItemsContainer.appendChild(orderItemElement);
+                });
+
+                // Update order summary
+                const subtotal = this.calculateSubtotal();
+                const tax = this.calculateTax();
+                const total = this.calculateTotal();
+
+                orderSubtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                orderTaxElement.textContent = `$${tax.toFixed(2)}`;
+                orderDeliveryElement.textContent = `$${this.deliveryFee.toFixed(2)}`;
+                orderTotalElement.textContent = `$${total.toFixed(2)}`;
+            }
+        }
+
+        // Initialize cart
+        const cart = new ShoppingCart();
+
+        // DOM elements
+        const cartToggle = document.getElementById("cartToggle");
+        const cartPanel = document.getElementById("cartPanel");
+        const closeCartBtn = document.querySelector(".close-cart");
+        const overlay = document.getElementById("overlay");
+        const clearCartBtn = document.getElementById("clearCart");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+        const productPage = document.getElementById("productPage");
+        const checkoutPage = document.getElementById("checkoutPage");
+
+        // Product detail page functionality
+        const minusBtn = document.querySelector(".quantity-btn.minus");
+        const plusBtn = document.querySelector(".quantity-btn.plus");
+        const quantityInput = document.getElementById("quantityInput");
+        const addToCartBtn = document.querySelector(".add-to-cart");
+        const buyNowBtn = document.querySelector(".buy-now");
+        const orderNotification = document.getElementById("orderNotification");
+        const closeNotificationBtn = document.querySelector(".close-notification");
+        const continueShoppingBtn = document.querySelector(".continue-shopping");
+        const viewCartBtn = document.querySelector(".view-cart");
+        const sizeOptions = document.querySelectorAll('input[name="size"]');
+        const favoriteButtons = document.querySelectorAll(".favorite");
+        const orderSuccessNotification = document.getElementById("orderSuccessNotification");
+        const backToHomeBtn = document.getElementById("backToHomeBtn");
+        const placeOrderBtn = document.getElementById("placeOrderBtn");
+        const paymentMethods = document.querySelectorAll(".payment-method");
+
+        // Toggle cart panel
+        if (cartToggle) {
+            cartToggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                cartPanel.classList.add("open");
+                overlay.classList.add("active");
+                cart.renderCart();
+            });
+        }
+
+        // Close cart panel
+        if (closeCartBtn) {
+            closeCartBtn.addEventListener("click", () => {
+                cartPanel.classList.remove("open");
+                overlay.classList.remove("active");
+            });
+        }
+
+        // Close cart when clicking on overlay
+        if (overlay) {
+            overlay.addEventListener("click", () => {
+                cartPanel.classList.remove("open");
+                overlay.classList.remove("active");
+            });
+        }
+
+        // Clear cart
+        if (clearCartBtn) {
+            clearCartBtn.addEventListener("click", () => {
+                if (confirm("Are you sure you want to clear your cart?")) {
+                    cart.clearCart();
+                    cart.renderCart();
+                }
+            });
+        }
+
+        // Checkout button
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener("click", () => {
+                if (cart.items.length === 0) {
+                    alert("Your cart is empty. Please add items to your cart before checking out.");
+                    return;
+                }
+
+                // Show checkout page
+                productPage.style.display = "none";
+                checkoutPage.style.display = "block";
+                cartPanel.classList.remove("open");
+                overlay.classList.remove("active");
+                cart.renderOrderItems();
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        }
+
+        // Quantity selector functionality
+        if (minusBtn && plusBtn && quantityInput) {
+            minusBtn.addEventListener("click", () => {
+                const currentValue = Number.parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+
+            plusBtn.addEventListener("click", () => {
+                const currentValue = Number.parseInt(quantityInput.value);
+                if (currentValue < 10) {
+                    quantityInput.value = currentValue + 1;
+                }
+            });
+
+            // Prevent manual input of invalid values
+            quantityInput.addEventListener("change", () => {
+                const value = Number.parseInt(quantityInput.value);
+                if (isNaN(value) || value < 1) {
+                    quantityInput.value = 1;
+                } else if (value > 10) {
+                    quantityInput.value = 10;
+                }
+            });
+        }
+
+        // Add to cart functionality
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener("click", () => {
+                // Get selected size and price
+                const selectedSize = document.querySelector('input[name="size"]:checked');
+                const size = selectedSize.value;
+                const price = Number.parseFloat(selectedSize.getAttribute("data-price"));
+
+                // Get quantity
+                const quantity = Number.parseInt(quantityInput.value);
+
+                // Get product details
+                const name = document.querySelector(".item-info h1").textContent;
+                const image = document.querySelector(".item-image img").getAttribute("src");
+
+                // Create item object
+                const item = {
+                    id: generateItemId(name, size),
+                    name,
+                    size,
+                    price,
+                    quantity,
+                    image,
+                };
+
+                // Add to cart
+                cart.addItem(item);
+
+                // Show notification
+                showNotification("Item Added to Cart!", "Your item has been added to the cart successfully.");
+            });
+        }
+
+        // Buy now functionality
+        if (buyNowBtn) {
+            buyNowBtn.addEventListener("click", () => {
+                // Add to cart first
+                addToCartBtn.click();
+
+                // Go to checkout
+                setTimeout(() => {
+                    checkoutBtn.click();
+                }, 500);
+            });
+        }
+
+        // Notification functionality
+        function showNotification(title, message) {
+            const notificationTitle = document.querySelector(".notification-text h3");
+            const notificationMessage = document.querySelector(".notification-text p");
+
+            if (notificationTitle && notificationMessage) {
+                notificationTitle.textContent = title;
+                notificationMessage.textContent = message;
+                orderNotification.classList.add("show");
+
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    orderNotification.classList.remove("show");
+                }, 5000);
+            }
+        }
+
+        // Close notification
+        if (closeNotificationBtn) {
+            closeNotificationBtn.addEventListener("click", () => {
+                orderNotification.classList.remove("show");
+            });
+        }
+
+        // Continue shopping button
+        if (continueShoppingBtn) {
+            continueShoppingBtn.addEventListener("click", () => {
+                orderNotification.classList.remove("show");
+            });
+        }
+
+        // View cart button
+        if (viewCartBtn) {
+            viewCartBtn.addEventListener("click", () => {
+                orderNotification.classList.remove("show");
+                cartPanel.classList.add("open");
+                overlay.classList.add("active");
+                cart.renderCart();
+            });
+        }
+
+        // Size options functionality
+        if (sizeOptions.length > 0) {
+            sizeOptions.forEach((option) => {
+                option.addEventListener("change", () => {
+                    const price = option.getAttribute("data-price");
+                    document.querySelector(".current-price").textContent = `$${price}`;
+                });
+            });
+        }
+
+        // Favorite button functionality
+        if (favoriteButtons.length > 0) {
+            favoriteButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const icon = button.querySelector("i");
+                    icon.classList.toggle("far");
+                    icon.classList.toggle("fas");
+
+                    if (icon.classList.contains("fas")) {
+                        icon.style.color = "#ff5a5f";
+                        showNotification("Added to Favorites", "This item has been added to your favorites.");
+                    } else {
+                        icon.style.color = "";
+                        showNotification("Removed from Favorites", "This item has been removed from your favorites.");
+                    }
+                });
+            });
+        }
+
+        // Payment method selection
+        if (paymentMethods.length > 0) {
+            paymentMethods.forEach((method) => {
+                method.addEventListener("click", () => {
+                    // Remove active class from all methods
+                    paymentMethods.forEach((m) => m.classList.remove("active"));
+                    
+                    // Add active class to selected method
+                    method.classList.add("active");
+                    
+                    // Show/hide payment form based on selected method
+                    const selectedMethod = method.getAttribute("data-method");
+                    const cardForm = document.getElementById("card-payment-form");
+                    
+                    if (selectedMethod === "card") {
+                        cardForm.style.display = "block";
+                    } else {
+                        cardForm.style.display = "none";
+                    }
+                });
+            });
+        }
+
+        // Form validation
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const zip = document.getElementById("zip").value;
+
+            if (!email || !phone || !name || !address || !city || !zip) {
+                return false;
+            }
+
+            // Get selected payment method
+            const selectedMethod = document.querySelector(".payment-method.active").getAttribute("data-method");
+
+            // Validate payment details if credit card is selected
+            if (selectedMethod === "card") {
+                const cardNumber = document.getElementById("card-number").value;
+                const expiry = document.getElementById("expiry").value;
+                const cvv = document.getElementById("cvv").value;
+                const cardName = document.getElementById("card-name").value;
+
+                if (!cardNumber || !expiry || !cvv || !cardName) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Place order
+        if (placeOrderBtn) {
+            placeOrderBtn.addEventListener("click", () => {
+                if (!validateForm()) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+                // Process order
+                // In a real application, you would send the order data to a server
+                // For this example, we'll just show a success notification
+
+                // Show success notification
+                orderSuccessNotification.classList.add("show");
+
+                // Clear cart
+                cart.clearCart();
+            });
+        }
+
+        // Back to home button
+        if (backToHomeBtn) {
+            backToHomeBtn.addEventListener("click", () => {
+                orderSuccessNotification.classList.remove("show");
+                checkoutPage.style.display = "none";
+                productPage.style.display = "block";
+                window.scrollTo(0, 0);
+            });
+        }
+
+        // Format credit card input
+        const cardNumberInput = document.getElementById("card-number");
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener("input", (e) => {
+                let value = e.target.value.replace(/\D/g, "");
+                if (value.length > 16) value = value.slice(0, 16);
+
+                // Add spaces every 4 digits
+                let formattedValue = "";
+                for (let i = 0; i < value.length; i++) {
+                    if (i > 0 && i % 4 === 0) formattedValue += " ";
+                    formattedValue += value[i];
+                }
+
+                e.target.value = formattedValue;
+            });
+        }
+
+        // Format expiry date input
+        const expiryInput = document.getElementById("expiry");
+        if (expiryInput) {
+            expiryInput.addEventListener("input", (e) => {
+                let value = e.target.value.replace(/\D/g, "");
+                if (value.length > 4) value = value.slice(0, 4);
+
+                // Format as MM/YY
+                if (value.length > 2) {
+                    value = value.slice(0, 2) + "/" + value.slice(2);
+                }
+
+                e.target.value = value;
+            });
+        }
+
+        // Format CVV input
+        const cvvInput = document.getElementById("cvv");
+        if (cvvInput) {
+            cvvInput.addEventListener("input", (e) => {
+                let value = e.target.value.replace(/\D/g, "");
+                if (value.length > 3) value = value.slice(0, 3);
+                e.target.value = value;
+            });
+        }
+
+        // Helper function to generate unique item ID
+        function generateItemId(name, size) {
+            return `${name.toLowerCase().replace(/\s+/g, "-")}-${size}`;
+        }
+
+        // Update cart count on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            cart.updateCartCount();
+        });
+    </script>
+</body>
+</html>
