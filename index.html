@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feasto</title>
+    <title>Feasto - Food Delivery</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,9 +13,14 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="projects img/7540436.jpg" alt="Foodizzz Logo">
+            <img src="projects img/7540436.jpg" alt="Feasto Logo">
             <h1>Feasto</h1>
         </div>
+        
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        
         <div class="search-container">
             <div class="search-box">
                 <i class="fas fa-map-marker-alt"></i>
@@ -29,15 +34,15 @@
                 <i class="fas fa-search"></i> Search
             </button>
         </div>
+        
         <nav class="nav-bar">
             <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
                 <li class="dropdown">
-                    <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
+                    <a href="#pages" class="dropdown-toggle"><i class="fas fa-file-alt"></i> Pages <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
-                        <!-- <a href="#shop_details"><i class="fas fa-info-circle"></i> Shop Details</a> -->
                         <a href="about.html"><i class="fas fa-users"></i> About Us</a>
                         <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
                         <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
@@ -45,7 +50,7 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#blog"><i class="fas fa-blog"></i> Blog</a>
+                    <a href="#blog" class="dropdown-toggle"><i class="fas fa-blog"></i> Blog <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a>
                         <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Details</a>
@@ -55,21 +60,19 @@
             </ul>
         </nav>
     </header>
-
     
     <div class="page1-container">
-             <!-- Background Video -->
-             <div class="page1-content">
-                 <span>Order Your Favorite Food with Ease 🍽️</span>
-                 <h1>Experience Delicious Meals from Top Restaurants</h1>
-                 <h5>Enjoy a seamless food ordering experience with our top-rated restaurants. From fast delivery to gourmet dishes, we've got everything for your cravings.</h5>
-                 <button class="order-btn">Order Now</button>
-                </div>
-                <div class="page1-img">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/home-banner-1.png" alt="Food Image">
-                </div>
-                
+        <div class="page1-content">
+            <span>Order Your Favorite Food with Ease 🍽️</span>
+            <h1>Experience Delicious Meals from Top Restaurants</h1>
+            <h5>Enjoy a seamless food ordering experience with our top-rated restaurants. From fast delivery to gourmet dishes, we've got everything for your cravings.</h5>
+            <button class="order-btn">Order Now</button>
+        </div>
+        <div class="page1-img">
+            <img src="https://pxdraft.com/wrap/foodie/assets/img/home-banner-1.png" alt="Food Image">
+        </div>
     </div>
+    
     <section class="services-section">
         <div class="container">
             <div class="section-header">
@@ -98,431 +101,340 @@
             </div>
         </div>
     </section>
-    <!-- <div class="page2">
-        <div class="service">
-            <div class="service-card">
-                <a href="https://www.zomato.com/ahmedabad/nikol-restaurants?category=1&delivery_subzone=41228&place_name=Nikol%2C++Ahmedabad" target="_blank">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/online-rder.jpg" alt="Order Online">
-                    <h2>Order Online</h2>
-                    <p>Stay Home and Order To Your Doorstep</p>
-                </a>
-            </div>
-            <div class="service-card">
-                <a href="https://www.zomato.com/ahmedabad/restaurants" target="_blank">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/dining.jpg" alt="Dining">
-                    <h2>Dining</h2>
-                    <p>View the city's favorite dining venues</p>
-                </a>
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="super">
-        <h2>Collection</h2>
-        <div class="hero">
-            <div class="hero-card">
-                <img src="/projects img/bt2.jpg" alt="Food 1">
-                <h6>Delicious Burgers</h6>
-            </div>
-            <div class="hero-card">
-                <img src="/projects img/bt3.jpg" alt="Food 2">
-                <h6>Spicy Pizza</h6>
-            </div>
-            <div class="hero-card">
-                <img src="/projects img/bt1.jpg" alt="Food 3">
-                <h6>Sushi Rolls</h6>
-            </div>
-            <div class="hero-card">
-                <img src="/projects img/blog1.jpg" alt="Food 4">
-                <h6>Pasta Delights</h6>
-            </div>
-            <div class="hero-card">
-                <img src="/projects img/blog2.jpg" alt="Food 5">
-                <h6>Fresh Salads</h6>
-            </div>
-            <div class="hero-card">
-                <img src="/projects img/blog3.jpg" alt="Food 6">
-                <h6>Sweet Desserts</h6>
-            </div>
-        </div>
-    </div>
- -->
 
- <section class="restaurants-section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Top Restaurants</h2>
-            <p>Discover the best restaurants in your area</p>
+    <section class="restaurants-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Restaurants</h2>
+                <p>Discover the best restaurants in your area</p>
+            </div>
+            <div class="restaurants-grid">
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Burger King">
+                            <span class="delivery-time">25 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>Burger King</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i> Snacks, Beverages</span>
+                                <span><i class="fas fa-wallet"></i> ₹300 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+                                <span class="reviews">200+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">60% OFF</span>
+                                <span class="offer-code">Use WELCOMEBACK</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="Pizza Hut">
+                            <span class="delivery-time">30 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>Pizza Hut</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i> Snacks, Beverages</span>
+                                <span><i class="fas fa-wallet"></i> ₹799 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                                <span class="reviews">350+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">50% OFF</span>
+                                <span class="offer-code">Use FOODIE50</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Sushi World">
+                            <span class="delivery-time">20 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>Sushi World</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i> Asian, Seafood</span>
+                                <span><i class="fas fa-wallet"></i> ₹270 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                                <span class="reviews">180+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">30% OFF</span>
+                                <span class="offer-code">Use SUSHILOVE</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Sweet Treats">
+                            <span class="delivery-time">15 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>Sweet Treats</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i> Desserts, Ice Cream</span>
+                                <span><i class="fas fa-wallet"></i> ₹200 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                                <span class="reviews">220+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">Buy 1 Get 1</span>
+                                <span class="offer-code">Limited Time Offer</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="projects img/blog1.jpg" alt="Sweet Treats">
+                            <span class="delivery-time">15 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>Shakti Restaurants</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i>Snacks, Beverages and more..</span>
+                                <span><i class="fas fa-wallet"></i> ₹350 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.1</span>
+                                <span class="reviews">130+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">DISCOUNT UPTO 200</span>
+                                <span class="offer-code">Limited Time Offer</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="restaurant-card">
+                    <a href="festoshoppage.html">
+                        <div class="restaurant-image">
+                            <img src="projects img/bt3.jpg" alt="Sweet Treats">
+                            <span class="delivery-time">15 min</span>
+                        </div>
+                        <div class="restaurant-info">
+                            <h3>SHIVAM DOSA</h3>
+                            <div class="restaurant-meta">
+                                <span><i class="fas fa-utensils"></i> Desserts, Ice Cream</span>
+                                <span><i class="fas fa-wallet"></i> ₹600 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                                <span class="reviews">290+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">Buy 2 Get 1</span>
+                                <span class="offer-code">Limited Time Offer</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="restaurants-grid">
-            <div class="restaurant-card">
-                <a href="festoshoppage.html">
-                <div class="restaurant-image">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Burger King">
-                    <span class="delivery-time">25 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>Burger King</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i> Snacks, Beverages</span>
-                        <span><i class="fas fa-wallet"></i> ₹300 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.2</span>
-                        <span class="reviews">200+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">60% OFF</span>
-                        <span class="offer-code">Use WELCOMEBACK</span>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="restaurant-card">
-                <a href="festoshoppage.html">
-                <div class="restaurant-image">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="Pizza Hut">
-                    <span class="delivery-time">30 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>Pizza Hut</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i> Snacks, Beverages</span>
-                        <span><i class="fas fa-wallet"></i> ₹799 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.5</span>
-                        <span class="reviews">350+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">50% OFF</span>
-                        <span class="offer-code">Use FOODIE50</span>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="restaurant-card">
-                <a href="festoshoppage.html" >
-                <div class="restaurant-image">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Sushi World">
-                    <span class="delivery-time">20 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>Sushi World</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i> Asian, Seafood</span>
-                        <span><i class="fas fa-wallet"></i> ₹270 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
-                        <span class="reviews">180+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">30% OFF</span>
-                        <span class="offer-code">Use SUSHILOVE</span>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="restaurant-card">
-                <a href="festoshoppage.html">
-                <div class="restaurant-image">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Sweet Treats">
-                    <span class="delivery-time">15 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>Sweet Treats</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i> Desserts, Ice Cream</span>
-                        <span><i class="fas fa-wallet"></i> ₹200 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
-                        <span class="reviews">220+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">Buy 1 Get 1</span>
-                        <span class="offer-code">Limited Time Offer</span>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="restaurant-card">
-                <a href="festoshoppage.html">
-                <div class="restaurant-image">
-                    <img src="projects img/blog1.jpg" alt="Sweet Treats">
-                    <span class="delivery-time">15 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>Shakti Restaurants</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i>Snacks ,Bbevrages and more..</span>
-                        <span><i class="fas fa-wallet"></i> ₹350 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.1</span>
-                        <span class="reviews">130+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">DISCOUNT UPTO 200</span>
-                        <span class="offer-code">Limited Time Offer</span>
-                    </div>
-                </div>
-                </a>
-            </div>
-            <div class="restaurant-card">
-                <a href="festoshoppage.html">
-                <div class="restaurant-image">
-                    <img src="projects img/bt3.jpg" alt="Sweet Treats">
-                    <span class="delivery-time">15 min</span>
-                </div>
-                <div class="restaurant-info">
-                    <h3>SHIVAM DOSA</h3>
-                    <div class="restaurant-meta">
-                        <span><i class="fas fa-utensils"></i> Desserts, Ice Cream</span>
-                        <span><i class="fas fa-wallet"></i> ₹600 for Two</span>
-                    </div>
-                    <div class="restaurant-rating">
-                        <span class="rating"><i class="fas fa-star"></i> 4.9</span>
-                        <span class="reviews">290+ reviews</span>
-                    </div>
-                    <div class="restaurant-offer">
-                        <span class="offer-tag">Buy 2 Get 1</span>
-                        <span class="offer-code">Limited Time Offer</span>
-                    </div>
+    </section>
 
+    <section class="how-it-works" id="how-it-works">
+        <div class="container2">
+            <div class="container2-img">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-1.png" alt="Order Process">
+            </div>
+            <div class="container2-content">
+                <h2>A Simple Process to Order Your Favorite Foods</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Set Your Location</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Choose the food you want to order</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>Confirm order with payment method</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <p>Within 30 minutes you will get your food</p>
+                        </div>
+                    </div>
                 </div>
-                </a>
+                <button><a href="festoshoppage.html">Order Food Now</a></button>
             </div>
         </div>
-    </div>
-</section>
-    <!-- <div class="Restaurants">
-        <h1>Top Restaurants</h1>
-        <div class="container1">
-            <div class="container1-content">
-                <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Burger">
-                <h3>Burger King</h3>
-                <p>Snacks, Beverages</p>
-                <p>25 min | 300 for Two</p>
-                <hr>
-                <h6 class="offer">60% OFF <span>Use WELCOMEBACK</span></h6>
-            </div>
-    
-            <div class="container1-content">
-                <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="Pizza">
-                <h3>Pizza Hut</h3>
-                <p>Snacks, Beverages</p>
-                <p>30 min | 799 for Two</p>
-                <hr>
-                <h6 class="offer">50% OFF <span>Use FOODIE50</span></h6>
-            </div>
-    
-            <div class="container1-content">
-                <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Sushi">
-                <h3>Sushi World</h3>
-                <p>Asian, Seafood</p>
-                <p>20 min | 270 for Two</p>
-                <hr>
-                <h6 class="offer">30% OFF <span>Use SUSHILOVE</span></h6>
-            </div>
-    
-            <div class="container1-content">
-                <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Desserts">
-                <h3>Sweet Treats</h3>
-                <p>Desserts, Ice Cream</p>
-                <p>15 min | 200 for Two</p>
-                <hr>
-                <h6 class="offer">Buy 1 Get 1 Free <span>Limited Time Offer</span></h6>
-            </div>
-        </div>
-    </div> -->
-    
-            <div class="container2">
-                <div class="container2-img">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-1.png" alt="" srcset="">
+    </section>
+
+    <section class="popular-dishes">
+        <div class="container">
+            <div class="section-title">Most Ordered Food</div>
+            <div class="underline"></div>
+
+            <div class="food-list">
+                <div class="food-card">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Vegetable Healthy Dish</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
+                        <div class="food-price">$87.00</div>
+                    </div>
+                    <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
                 </div>
-                <div class="container2-content">
-                    <h2>A very Simple Process to Make Order Your Favourite Foods</h2>
-                    <p> - Set Your Location</p>
-                    <p>- Choose the food you want to order</p>
-                    <p>- Confirm order with payment method</p>
-                    <p>- within 30 minutes you will get your food</p>
-                    <button> <a href="festoshoppage.html">Order Food Now</a> </button>
+
+                <div class="food-card">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Vegetable Healthy Dish</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
+                        <div class="food-price">$87.00</div>
+                    </div>
+                    <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
                 </div>
-            </div>
-            
-            <div class="container">
-                <div class="section-title">Most Ordered Food</div>
-                <div class="underline"></div>
-        
-                <div class="food-list">
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
+
+                <div class="food-card">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-5.jpg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Vegetable Healthy Dish</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
+                        <div class="food-price">$87.00</div>
                     </div>
-        
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-        
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-5.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-        
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-6.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-7.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-8.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-9.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
-                    <div class="food-card">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-6.jpg" alt="Food">
-                        <div class="food-info">
-                            <div class="food-title">Vegetable Healthy Dish</div>
-                            <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
-                            <div class="food-price">$87.00</div>
-                        </div>
-                        <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
-                    </div>
+                    <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
                 </div>
-        
-                <div class="view-all">
-                    <button><a href="festoshoppage.html">View All</a></button>
+
+                <div class="food-card">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-6.jpg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Vegetable Healthy Dish</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins • 🧀 Cheese</div>
+                        <div class="food-price">$87.00</div>
+                    </div>
+                    <button class="add-button"><a href="festoshoppage.html">+ ADD</a></button>
                 </div>
             </div>
 
-            <div class="container4">
-                <div class="text-content">
-                    <h1>Want to Earn Extra? Join as a Delivery Boy</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
-                    <button class="apply-btn"><a href="festoshoppage.html">Apply Now</a></button>
-                </div>
-                <div class="image-content">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-2.png" alt="Delivery Boy">
+            <div class="view-all">
+                <button><a href="festoshoppage.html">View All</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-delivery">
+        <div class="container4">
+            <div class="text-content">
+                <h1>Want to Earn Extra? Join as a Delivery Partner</h1>
+                <p>Join our team of delivery partners and earn competitive pay with flexible hours. Be your own boss and deliver happiness to our customers' doorsteps.</p>
+                <button class="apply-btn"><a href="festoshoppage.html">Apply Now</a></button>
+            </div>
+            <div class="image-content">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-2.png" alt="Delivery Boy">
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-app">
+        <div class="container5">
+            <div class="image-content">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-3.png" alt="Mobile App">
+            </div>
+            <div class="text-content">
+                <h1>It's Easier to Order With Our Mobile App</h1>
+                <p>Download our mobile app for a faster, more convenient way to order your favorite food. Get exclusive app-only offers and track your delivery in real-time.</p>
+                <div class="apps">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/apple-store.png" alt="Apple Store">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/google-store.png" alt="Google Play">
                 </div>
             </div>
-            
-            <div class="container5">
-                <div class="image-content">
-                    <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-3.png" alt="Mobile App">
-                </div>
-                <div class="text-content">
-                    <h1>It's More Easy to Order By Mobile App</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima ex quas blanditiis sunt omnis molestias cupiditate provident nobis nisi aliquam!</p>
-                    <div class="apps">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/apple-store.png" alt="Apple Store">
-                        <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/google-store.png" alt="Google Play">
-                    </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><img src="projects img/7540436.jpg" alt="Foodie Logo"> Feasto</h2>
+                <p>Bringing delicious food from the best restaurants straight to your doorstep. Fast, reliable, and always fresh.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            
-           <!-- Footer Section -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-logo">
-            <h2><img src="projects img/7540436.jpg" alt="Foodie Logo"> Feasto</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dictumst faucibus ac eget nisl augue.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="dinout.html">Restaurants</a></li>
+                        <li><a href="festoshoppage.html">Order Food</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="festoshoppage.html">Online Order</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h3>Join Our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
+                </form>
+                <p>Will send you weekly updates for better food offers.</p>
             </div>
         </div>
 
-        <div class="footer-links">
-            <div>
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <!-- <li><a href="#">Careers</a></li> -->
-                    <li><a href="blog.html">Blog</a></li>
-                    <!-- <li><a href="#">Work With Us</a></li> -->
-                </ul>
-            </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="dinout.html">Restaurants</a></li>
-                    <li><a href="festoshoppage.html">Order Food</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
-                    <!-- <li><a href="#">FAQs</a></li> -->
-                </ul>
-            </div>
-            <div>
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="festoshoppage.html">Online Order</a></li>
-                    <li><a href="contact.html">Support</a></li>
-                </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feasto. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
             </div>
         </div>
+    </footer>
 
-        <div class="newsletter">
-            <h3>Join Our Newsletter</h3>
-            <input type="email" placeholder="Enter your email">
-            <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
-            <p>Will send you weekly updates for better food offers.</p>
-        </div>
-    </div>
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <div class="footer-bottom">
-        <p>&copy; 2025 Foodie. All Rights Reserved.</p>
-        <div class="payment-methods">
-            <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
-        </div>
-    </div>
-</footer>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
