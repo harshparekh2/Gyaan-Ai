@@ -96,8 +96,6 @@ header {
     left: 0;
 }
 
-
-
 /* Overlay Effect */
 .overlay1 {
     position: fixed;
@@ -158,8 +156,6 @@ header {
     position: relative; /* remove absolute positioning */
     z-index: 1;
 }
-
-
 
 @keyframes fadeIn {
     from {
@@ -239,7 +235,6 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
-
 .rating .star {
     font-size: 30px;
     color: gold;
@@ -277,7 +272,6 @@ h2 {
 .rating .star.active {
     color: rgb(255, 58, 58);
 }
-
 
 /* Submit Button */
 button {
@@ -509,4 +503,4 @@ footer {
     .payment-methods {
         justify-content: center;
     }
-}
+}   

@@ -22,7 +22,6 @@
                     <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
                     <div class="dropdown-content">
                         <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
-                        <!-- <a href="#"><i class="fas fa-info-circle"></i> Shop Details</a> -->
                         <a href="about.html"><i class="fas fa-users"></i> About Us</a>
                         <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
                         <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
@@ -893,37 +892,6 @@
             });
         }
 
-        // Form validation
-        function validateForm() {
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const name = document.getElementById("name").value;
-            const address = document.getElementById("address").value;
-            const city = document.getElementById("city").value;
-            const zip = document.getElementById("zip").value;
-
-            if (!email || !phone || !name || !address || !city || !zip) {
-                return false;
-            }
-
-            // Get selected payment method
-            const selectedMethod = document.querySelector(".payment-method.active").getAttribute("data-method");
-
-            // Validate payment details if credit card is selected
-            if (selectedMethod === "card") {
-                const cardNumber = document.getElementById("card-number").value;
-                const expiry = document.getElementById("expiry").value;
-                const cvv = document.getElementById("cvv").value;
-                const cardName = document.getElementById("card-name").value;
-
-                if (!cardNumber || !expiry || !cvv || !cardName) {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
         // Place order
         if (placeOrderBtn) {
             placeOrderBtn.addEventListener("click", () => {
@@ -954,48 +922,35 @@
             });
         }
 
-        // Format credit card input
-        const cardNumberInput = document.getElementById("card-number");
-        if (cardNumberInput) {
-            cardNumberInput.addEventListener("input", (e) => {
-                let value = e.target.value.replace(/\D/g, "");
-                if (value.length > 16) value = value.slice(0, 16);
+        // Form validation
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const zip = document.getElementById("zip").value;
 
-                // Add spaces every 4 digits
-                let formattedValue = "";
-                for (let i = 0; i < value.length; i++) {
-                    if (i > 0 && i % 4 === 0) formattedValue += " ";
-                    formattedValue += value[i];
+            if (!email || !phone || !name || !address || !city || !zip) {
+                return false;
+            }
+
+            // Get selected payment method
+            const selectedMethod = document.querySelector(".payment-method.active").getAttribute("data-method");
+
+            // Validate payment details if credit card is selected
+            if (selectedMethod === "card") {
+                const cardNumber = document.getElementById("card-number").value;
+                const expiry = document.getElementById("expiry").value;
+                const cvv = document.getElementById("cvv").value;
+                const cardName = document.getElementById("card-name").value;
+
+                if (!cardNumber || !expiry || !cvv || !cardName) {
+                    return false;
                 }
+            }
 
-                e.target.value = formattedValue;
-            });
-        }
-
-        // Format expiry date input
-        const expiryInput = document.getElementById("expiry");
-        if (expiryInput) {
-            expiryInput.addEventListener("input", (e) => {
-                let value = e.target.value.replace(/\D/g, "");
-                if (value.length > 4) value = value.slice(0, 4);
-
-                // Format as MM/YY
-                if (value.length > 2) {
-                    value = value.slice(0, 2) + "/" + value.slice(2);
-                }
-
-                e.target.value = value;
-            });
-        }
-
-        // Format CVV input
-        const cvvInput = document.getElementById("cvv");
-        if (cvvInput) {
-            cvvInput.addEventListener("input", (e) => {
-                let value = e.target.value.replace(/\D/g, "");
-                if (value.length > 3) value = value.slice(0, 3);
-                e.target.value = value;
-            });
+            return true;
         }
 
         // Helper function to generate unique item ID

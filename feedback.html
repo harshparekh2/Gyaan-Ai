@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Feedback Form</title>
     <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="projects img/7540436.jpg" alt="Foodizzz Logo">
+            <img src="https://via.placeholder.com/55" alt="Foodizzz Logo">
             <h1>Feasto</h1>
         </div>
        
@@ -21,7 +22,6 @@
                     <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
                     <div class="dropdown-content">
                         <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
-                        <!-- <a href="#shop_details"><i class="fas fa-info-circle"></i> Shop Details</a> -->
                         <a href="about.html"><i class="fas fa-users"></i> About Us</a>
                         <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
                         <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
@@ -103,7 +103,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
-                <h2><img src="projects img/7540436.jpg" alt="Foodie Logo"> Feasto</h2>
+                <h2><img src="https://via.placeholder.com/30" alt="Foodie Logo"> Feasto</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dictumst faucibus ac eget nisl augue.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook"></i></a>
@@ -118,19 +118,15 @@
                     <h3>Company</h3>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        
                         <li><a href="blog.html">Blog</a></li>
-                        <!-- <li><a href="#">Work With Us</a></li> -->
                     </ul>
                 </div>
                 <div>
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="dinout.html">Restaurants</a></li>
-    
                         <li><a href="festoshoppage.html">Order Food</a></li>
                         <li><a href="feedback.html">Feedback</a></li>
-                  
                     </ul>
                 </div>
                 <div>
@@ -161,6 +157,27 @@
         </div>
     </footer> 
     
-
+    <script>
+        // Star rating functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star');
+            const ratingInput = document.getElementById('rating-value');
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    ratingInput.value = value;
+                    
+                    // Reset all stars
+                    stars.forEach(s => s.classList.remove('active'));
+                    
+                    // Highlight selected stars
+                    for(let i = 0; i < value; i++) {
+                        stars[i].classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

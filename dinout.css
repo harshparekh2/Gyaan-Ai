@@ -133,7 +133,9 @@ img {
 
 section {
     padding: 80px 0;
-}header {
+}
+
+header {
     background: #222; /* Dark mode for a premium look */
     display: flex;
     align-items: center;
@@ -223,6 +225,7 @@ section {
     top: 100%;
     left: 0;
 }
+
 /* Overlay Effect */
 .overlay1{
     position: fixed;
@@ -256,6 +259,7 @@ section {
         gap: 10px;
     }
 }
+
 .hero {
     position: relative;
     width: 100%;
@@ -594,9 +598,11 @@ section {
 .restaurant-info .btn {
     width: 100%;
 }
+
 .restaurant-card .restaurant-image button:hover{
     background-color: #ff0000;
 }
+
 /* Cuisine Categories */
 .cuisine-categories {
     background-color: var(--background-light);
