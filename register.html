@@ -6,45 +6,47 @@
   <title>Register</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="register.css">
-
-  
 </head>
 <body>
   <header>
     <div class="logo-container">
-        <img src="projects img/7540436.jpg" alt="Foodizzz Logo">
-        <h1>Feasto</h1>
+      <img src="projects img/7540436.jpg" alt="Feasto Logo">
+      <h1>Feasto</h1>
     </div>
-    
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
-            <li class="dropdown">
-                <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
-                <div class="dropdown-content">
-                    <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
-                    <!-- <a href="#shop_details"><i class="fas fa-info-circle"></i> Shop Details</a> -->
-                    <a href="about.html"><i class="fas fa-users"></i> About Us</a>
-                    <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
-                    <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    <a href="register.html"><i class="fas fa-user-plus"></i> Sign Up</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#blog"><i class="fas fa-blog"></i> Blog</a>
-                <div class="dropdown-content">
-                    <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a>
-                    <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Details</a>
-                </div>
-            </li>
-            <li><a href="feedback.html"><i class="fas fa-comment-alt"></i> Feedback</a></li>
-        </ul>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-bar" id="nav-menu">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle"><i class="fas fa-file-alt"></i> Pages <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
+            <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+            <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+            <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="register.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="#blog" class="dropdown-toggle"><i class="fas fa-blog"></i> Blog <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+              <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a>
+              <a href="blog-details.html"><i class="fas fa-file-alt"></i> Blog Details</a>
+          </div>
+      </li>
+        <li><a href="feedback.html"><i class="fas fa-comment-alt"></i> Feedback</a></li>
+      </ul>
     </nav>
-</header>
+    <div class="menu-overlay" id="menu-overlay"></div>
+  </header>
 
-
-  <div class="main">
+  <main class="main">
     <div class="container">
       <h1>Register</h1>
       <form id="registerForm">
@@ -69,97 +71,118 @@
       </form>
 
       <div class="login-link">
-        Have an account? <a href="login.html">Login here</a>
+        Already have an account? <a href="login.html">Login here</a>
       </div>
     </div>
-  </div>
-<!-- Footer -->
-<footer>
-  <div class="footer-container">
-    <div class="footer-logo">
-      <h2><img src="projects img/7540436.jpg" alt="Foodie Logo" /> Feasto</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus dictumst faucibus ac eget nisl augue.</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2><img src="projects img/7540436.jpg" alt="Feasto Logo" /> Feasto</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="festoshoppage.html">Order Food</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Support</h3>
+          <ul>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="newsletter">
+        <h3>Join Our Newsletter</h3>
+        <input type="email" placeholder="Your email" />
+        <button><i class="fas fa-envelope"></i> SEND</button>
       </div>
     </div>
-    <div class="footer-links">
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="dinout.html">Restaurants</a></li>
-          <li><a href="festoshoppage.html">Order Food</a></li>
-          <li><a href="feedback.html">Feedback</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Services</h3>
-        <ul>
-          <li><a href="festoshoppage.html">Online Order</a></li>
-          <li><a href="contact.html">Support</a></li>
-        </ul>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Feasto. All rights reserved.</p>
     </div>
-    <div class="newsletter">
-      <h3>Join Our Newsletter</h3>
-      <input type="email" placeholder="Enter your email" />
-      <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
-      <p>Will send you weekly updates for better food offers.</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Foodie. All Rights Reserved.</p>
-    <div class="payment-methods">
-      <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
-    </div>
-  </div>
-</footer>
+  </footer>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const registerForm = document.getElementById('registerForm');
-      registerForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const formData = new FormData(registerForm);
-        const registerData = {};
-        formData.forEach((value, key) => {
-          registerData[key] = value;
-        });
-
-        try {
-          const response = await fetch('/save-registration-data', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(registerData),
-          });
-
-          if (response.ok) {
-            alert('Registration successful!');
-            registerForm.reset();
-          } else {
-            alert('Failed to save registration data.');
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const navMenu = document.getElementById('nav-menu');
+      const menuOverlay = document.getElementById('menu-overlay');
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      
+      // Toggle mobile menu
+      mobileMenu.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        this.classList.toggle('active');
+      });
+      
+      // Close menu when clicking overlay
+      menuOverlay.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+      
+      // Handle dropdowns on mobile
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
           }
-        } catch (error) {
-          console.error('Error during fetch:', error);
-          alert('Error connecting to the server.');
+        });
+      });
+      
+      // Close mobile menu on window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          navMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          mobileMenu.classList.remove('active');
+          document.querySelectorAll('.dropdown.active').forEach(dropdown => {
+            dropdown.classList.remove('active');
+          });
         }
       });
+      
+      // Form validation
+      const registerForm = document.getElementById('registerForm');
+      if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const password = document.getElementById('password').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+          
+          if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return false;
+          }
+          
+          alert('Registration successful!');
+          this.reset();
+        });
+      }
     });
   </script>
-
 </body>
 </html>
