@@ -1190,6 +1190,8 @@ footer {
 .payment-methods {
     display: flex;
     gap: 15px;
+    text-align: center;
+    justify-content: center;
 }
 
 .payment-methods img {
