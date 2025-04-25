@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    window.addEventListener('load', function() {
+        const preloader = document.querySelector('.preloader');
+        setTimeout(() => {
+            preloader.classList.add('fade');
+        }, 500);
+    });
   // Mobile Menu Toggle
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const navBar = document.querySelector('.nav-bar');
