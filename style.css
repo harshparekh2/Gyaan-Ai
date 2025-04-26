@@ -8,7 +8,7 @@
 
 :root {
     --primary-color: #ff6700;
-    --secondary-color: #ffb700;
+    --secondary-color: #ff4800;
     --dark-color: #222;
     --light-color: #fff;
     --gray-color: #f5f5f5;
@@ -25,6 +25,7 @@ body {
     background-color: var(--light-color);
     line-height: 1.6;
 }
+
 
 .container {
     width: 100%;
@@ -99,10 +100,10 @@ header {
 /* Search Box */
 .search-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 15px;
     flex-wrap: wrap;
-    margin: 10px 0;
+    margin: 10px 0px;
     order: 3;
     width: 100%;
 }
@@ -114,7 +115,7 @@ header {
     padding: 8px 12px;
     border-radius: var(--border-radius);
     flex: 1;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .search-box i {
@@ -399,8 +400,15 @@ header {
 
 /* Animation for page load */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in {
@@ -447,8 +455,11 @@ header {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 /* Hero Section */
 .page1-container {
     background: linear-gradient(to right, #ff4d00, #ff9500);
