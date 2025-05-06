@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Item Detail | Feasto</title>
-    <link rel="stylesheet" href="iteam.css">
+    <link rel="stylesheet" href="chicken2.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,26 +17,30 @@
             <img src="projects img/7540436.jpg" alt="Feasto Logo">
             <h1>Feasto</h1>
         </div>
-        
+
         <!-- Mobile menu toggle button -->
         <div class="menu-toggle" id="menuToggle">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        
+
         <nav class="nav-bar" id="navBar">
             <ul>
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="festoshoppage.html"><i class="fas fa-store"></i> Shop</a></li>
+                <li><a href="restaurants.html"><i class="fas fa-shopping-cart"></i>Restaurant</a></li>
                 <li class="dropdown">
-                    <a href="#pages"><i class="fas fa-file-alt"></i> Pages</a>
+                    <a href="#explore"><i class="fas fa-compass"></i>Explore</a>
                     <div class="dropdown-content">
-                        <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a>
+                       
                         <a href="about.html"><i class="fas fa-users"></i> About Us</a>
                         <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                        <a href="blog.html"><i class="fas fa-newspaper"></i>Blog</a>
+
                         <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+
                         <a href="register.html"><i class="fas fa-user-plus"></i>Sign Up</a>
+                        <a href="feedback.html"><i class="fas fa-comment-alt"></i>Feedback</a>
                     </div>
                 </li>
                 <li><a href="#" id="cartToggle"><i class="fas fa-shopping-cart"></i> Cart <span
@@ -84,7 +88,7 @@
         <main class="item-detail-container">
             <div class="breadcrumb">
                 <a href="index.html">Home</a> /
-                <a href="festoshoppage.html">Shop</a> /
+                < <a href="restaurants.html">Shop</a> /
                 <span>Food Item Detail</span>
             </div>
 
@@ -96,7 +100,7 @@
                 </div>
                 <div class="item-info">
                     <div class="item-tag">Bestseller</div>
-                    <h1>Delicious Food Item</h1>
+                    <h1>Chicken Strips (Tenders)</h1>
                     <div class="item-meta">
                         <span><i class="fas fa-clock"></i> 20-30 min</span>
                         <span><i class="fas fa-utensils"></i> Italian</span>
@@ -108,9 +112,8 @@
                     </div>
                     <div class="item-description">
                         <h3>Description</h3>
-                        <p>This delicious food item is made with the finest ingredients, carefully selected to provide
-                            an exceptional taste experience. Our chefs prepare each dish with passion and attention to
-                            detail, ensuring that every bite is a delight for your taste buds.</p>
+                        <p>Boneless and bold! These juicy chicken strips are seasoned and fried to crispy
+                            perfection—great with dips or in a meal box.</p>
                     </div>
                     <div class="item-options">
                         <h3>Options</h3>
@@ -147,69 +150,61 @@
                     </div>
                 </div>
             </section>
-
-            <section class="related-items">
-                <div class="section-header">
-                    <h2>You May Also Like</h2>
-                    <p>Other delicious options you might enjoy</p>
+            <section class="item-detail">
+                <div class="item-image">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="Delicious Food Item">
+                    <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                    <button class="favorite"><i class="far fa-heart"></i></button>
                 </div>
-                <div class="items-grid">
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg"
-                                alt="Related Food Item 1">
-                            <span class="rating"><i class="fas fa-star"></i> 4.7</span>
-                            <button class="favorite"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="item-info">
-                            <div class="item-tag">Popular</div>
-                            <h3>Pizza Hut</h3>
-                            <div class="item-meta">
-                                <span><i class="fas fa-utensils"></i> Snacks, Beverages</span>
-                            </div>
-                            <div class="item-price">
-                                <span class="current-price">$10.99</span>
-                            </div>
-                            <button class="btn btn-primary">View Details</button>
+                <div class="item-info">
+                    <div class="item-tag">Popular</div>
+                    <h1>Zinger Burger</h1>
+                    <div class="item-meta">
+                        <span><i class="fas fa-clock"></i> 25-35 min</span>
+                        <span><i class="fas fa-utensils"></i> Italian</span>
+                    </div>
+                    <div class="item-price">
+                        <span class="current-price">$16.99</span>
+                        <span class="original-price">$19.99</span>
+                        <span class="discount">15% OFF</span>
+                    </div>
+                    <div class="item-description">
+                        <h3>Description</h3>
+                        <p>A crispy spicy chicken fillet layered with lettuce and mayo in a soft sesame bun. A bold,
+                            juicy burger that packs a flavorful punch.</p>
+                    </div>
+                    <div class="item-options">
+                        <h3>Options</h3>
+                        <div class="option-group">
+                            <label class="option">
+                                <input type="radio" name="size" value="small" checked data-price="16.99">
+                                <span class="option-text">Small</span>
+                                <span class="option-price">$16.99</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="size" value="medium" data-price="18.99">
+                                <span class="option-text">Medium</span>
+                                <span class="option-price">$18.99</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="size" value="large" data-price="20.99">
+                                <span class="option-text">Large</span>
+                                <span class="option-price">$20.99</span>
+                            </label>
                         </div>
                     </div>
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg"
-                                alt="Related Food Item 2">
-                            <span class="rating"><i class="fas fa-star"></i> 4.9</span>
-                            <button class="favorite"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="item-info">
-                            <div class="item-tag">New</div>
-                            <h3>Sushi World</h3>
-                            <div class="item-meta">
-                                <span><i class="fas fa-utensils"></i> Asian , Sea Food</span>
-                            </div>
-                            <div class="item-price">
-                                <span class="current-price">$11.99</span>
-                            </div>
-                            <button class="btn btn-primary">View Details</button>
+                    <div class="item-quantity">
+                        <h3>Quantity</h3>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                            <input type="number" value="1" min="1" max="10" class="quantity-input" id="quantityInput">
+                            <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
                         </div>
                     </div>
-                    <div class="item-card">
-                        <div class="item-image">
-                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg"
-                                alt="Related Food Item 3">
-                            <span class="rating"><i class="fas fa-star"></i> 4.6</span>
-                            <button class="favorite"><i class="far fa-heart"></i></button>
-                        </div>
-                        <div class="item-info">
-                            <div class="item-tag">Spicy</div>
-                            <h3>Sweet Treats</h3>
-                            <div class="item-meta">
-                                <span><i class="fas fa-utensils"></i> Desserts , Ice Creams</span>
-                            </div>
-                            <div class="item-price">
-                                <span class="current-price">$13.99</span>
-                            </div>
-                            <button class="btn btn-primary">View Details</button>
-                        </div>
+                    <div class="item-actions">
+                        <button class="btn btn-primary add-to-cart"><i class="fas fa-shopping-cart"></i> Add to
+                            Cart</button>
+                        <button class="btn btn-outline buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
                     </div>
                 </div>
             </section>
@@ -219,7 +214,7 @@
     <!-- Checkout Page -->
     <div id="checkoutPage" style="display: none;">
         <div class="breadcrumb" style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
-            <a href="iteambug.html">Home</a> /
+            <a href="index.html">Home</a> /
             <span>Checkout</span>
         </div>
 
@@ -385,15 +380,15 @@
                 <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="dinout.html">Restaurants</a></li>
-                        <li><a href="festoshoppage.html">Menu</a></li>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="restaurants.html">Menu</a></li>
                         <li><a href="feedback.html">Feedback</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="festoshoppage.html">Online Order</a></li>
+                        <li><a href="restaurants.html">Online Order</a></li>
                         <li><a href="contact.html">Support</a></li>
                     </ul>
                 </div>
@@ -414,11 +409,10 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
-              </div>
+            </div>
         </div>
     </footer>
-
-    <script src="iteam.js"></script>
+    <script src="chicken2.js"></script>
 </body>
 
 </html>

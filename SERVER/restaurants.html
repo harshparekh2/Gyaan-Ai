@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasto - Restaurant Listings</title>
+    <link rel="stylesheet" href="restaurants.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="projects img/7540436.jpg" alt="Feasto Logo">
+            <h1>Feasto</h1>
+        </div>
+
+        <!-- Mobile menu toggle button -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav class="nav-bar" id="navBar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="restaurants.html"><i class="fas fa-shopping-cart"></i>Restaurant</a></li>
+                <li class="dropdown">
+                    <a href="#explore"><i class="fas fa-compass"></i>Explore</a>
+                    <div class="dropdown-content">
+                        <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+                        <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                        <a href="blog.html"><i class="fas fa-newspaper"></i>Blog</a>
+
+                        <a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+
+                        <a href="register.html"><i class="fas fa-user-plus"></i>Sign Up</a>
+                        <a href="feedback.html"><i class="fas fa-comment-alt"></i>Feedback</a>
+                    </div>
+                </li>
+                <li><a href="#" id="cartToggle"><i class="fas fa-shopping-cart"></i> Cart <span
+                            class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <button class="close-cart">&times;</button>
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-summary" id="cartSummary">
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (10%):</span>
+                <span id="cartTax">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery:</span>
+                <span id="cartDelivery">$2.99</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <button class="btn btn-outline" id="clearCart">Clear Cart</button>
+            <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay for cart panel -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore Our Partner Restaurants</h1>
+            <p>Discover a variety of cuisines from our top-rated restaurant partners</p>
+        </div>
+    </section>
+
+    <!-- Restaurant Listings -->
+    <section class="restaurant-listings">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Partner Restaurants</h2>
+                <p>Click on a restaurant to view their menu</p>
+            </div>
+
+            <div class="restaurant-grid">
+                <!-- Burger King -->
+                <div class="restaurant-card" data-target="burger-king-menu">
+                    <div class="restaurant-image">
+                        <img src="https://pxdraft.com/wrap/foodie/assets/img/restaurant-1.jpg" alt="Burger King">
+                        <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                        <span class="time"><i class="fas fa-clock"></i> 20-30 min</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Burger King</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-utensils"></i> Fast Food, Burgers</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 1.2 miles</span>
+                        </div>
+                        <button class="btn btn-primary view-menu">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- KFC -->
+                <div class="restaurant-card" data-target="kfc-menu">
+                    <div class="restaurant-image">
+                        <img src="https://pxdraft.com/wrap/foodie/assets/img/restaurant-2.jpg" alt="KFC">
+                        <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="time"><i class="fas fa-clock"></i> 25-35 min</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>KFC</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-utensils"></i> Fast Food, Chicken</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 2.0 miles</span>
+                        </div>
+                        <button class="btn btn-primary view-menu">View Menu</button>
+                    </div>
+                </div>
+
+                <!-- Pizza Hut -->
+                <div class="restaurant-card" data-target="pizza-hut-menu">
+                    <div class="restaurant-image">
+                        <img src="https://pxdraft.com/wrap/foodie/assets/img/restaurant-3.jpg" alt="Pizza Hut">
+                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="time"><i class="fas fa-clock"></i> 30-40 min</span>
+                    </div>
+                    <div class="restaurant-info">
+                        <h3>Pizza Hut</h3>
+                        <div class="restaurant-meta">
+                            <span><i class="fas fa-utensils"></i> Pizza, Italian</span>
+                            <span><i class="fas fa-map-marker-alt"></i> 1.8 miles</span>
+                        </div>
+                        <button class="btn btn-primary view-menu">View Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Menus (Hidden by default) -->
+    <section class="restaurant-menus">
+        <div class="container">
+            <!-- Burger King Menu -->
+            <div class="restaurant-menu" id="burger-king-menu">
+                <div class="menu-header">
+                    <h2>Burger King Menu</h2>
+                    <button class="close-menu">&times;</button>
+                </div>
+                <div class="menu-items">
+                    <!-- Maharaja Burger -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Maharaja Burger">
+                            <span class="menu-item-tag">Bestseller</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Maharaja Burger</h3>
+                            <p>Our signature burger with premium beef patty, special sauce, and fresh vegetables.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$12.99</span>
+                                <span class="original-price">$15.99</span>
+                            </div>
+                            <a href="burger3.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- King's Special -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-2.jpg" alt="King's Special">
+                            <span class="menu-item-tag">Popular</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>King's Special</h3>
+                            <p>A royal treat for burger lovers with premium beef patty, special sauce, and fresh
+                                vegetables.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$14.99</span>
+                                <span class="original-price">$17.99</span>
+                            </div>
+                            <a href="burger2.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Aloo Tikki -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-3.jpg" alt="Aloo Tikki">
+                            <span class="menu-item-tag">Vegetarian</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Aloo Tikki</h3>
+                            <p>A delicious vegetarian option with spiced potato patty, fresh vegetables, and special
+                                sauce.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$10.99</span>
+                                <span class="original-price">$13.99</span>
+                            </div>
+                            <a href="burger1.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Spicy Aloo Tikki -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-4.jpg" alt="Spicy Aloo Tikki">
+                            <span class="menu-item-tag">Spicy</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Spicy Aloo Tikki</h3>
+                            <p>Our Aloo Tikki with an extra kick of spice for those who love heat in their food.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$11.99</span>
+                                <span class="original-price">$14.99</span>
+                            </div>
+                            <a href="burger1.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Double Maharaja -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-5.jpg" alt="Double Maharaja">
+                            <span class="menu-item-tag">New</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Double Maharaja</h3>
+                            <p>Double the patties, double the flavor. Our Maharaja burger with two premium beef patties.
+                            </p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$16.99</span>
+                                <span class="original-price">$19.99</span>
+                            </div>
+                            <a href="burger3.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- king's Wopper -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-6.jpg" alt="Veggie Delight">
+                            <span class="menu-item-tag">Vegetarian</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>King's Whopper</h3>
+                            <p>A healthy option with a mix of fresh vegetables, cheese, and our special sauce.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$9.99</span>
+                                <span class="original-price">$12.99</span>
+                            </div>
+                            <a href="burger2.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KFC Menu -->
+            <div class="restaurant-menu" id="kfc-menu">
+                <div class="menu-header">
+                    <h2>KFC Menu</h2>
+                    <button class="close-menu">&times;</button>
+                </div>
+                <div class="menu-items">
+                    <!-- Original Recipe Chicken -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-7.jpg"
+                                alt="Original Recipe Chicken">
+                            <span class="menu-item-tag">Bestseller</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Original Recipe Chicken</h3>
+                            <p>Our classic chicken with the secret blend of 11 herbs and spices.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$12.99</span>
+                                <span class="original-price">$15.99</span>
+                            </div>
+                            <a href="chicken3.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Hot & Spicy Chicken -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-8.jpg"
+                                alt="Hot & Spicy Chicken">
+                            <span class="menu-item-tag">Spicy</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Hot & Spicy Chicken</h3>
+                            <p>Our chicken with an extra kick of spice for those who love heat.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$13.99</span>
+                                <span class="original-price">$16.99</span>
+                            </div>
+                            <a href="chicken.html" class="btn btn-primary">More Details</a>
+
+                        </div>
+                    </div>
+
+                    <!-- Zinger Burger -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-9.jpg" alt="Zinger Burger">
+                            <span class="menu-item-tag">Popular</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Zinger Burger</h3>
+                            <p>Crispy chicken fillet with lettuce and mayo in a soft bun.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$10.99</span>
+                                <span class="original-price">$13.99</span>
+                            </div>
+                            <a href="chicken2.html" class="btn btn-primary">More Details</a>
+
+                        </div>
+                    </div>
+
+                    <!-- Chicken Popcorn -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-10.jpg" alt="Chicken Popcorn">
+                            <span class="menu-item-tag">Kids Favorite</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Chicken Popcorn</h3>
+                            <p>Bite-sized pieces of chicken, perfect for snacking.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$8.99</span>
+                                <span class="original-price">$10.99</span>
+                            </div>
+                            <a href="chicken.html" class="btn btn-primary">More Details</a>
+
+                        </div>
+                    </div>
+
+                    <!-- Nashville Hot Chicken -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-11.jpg" alt="Chicken Bucket">
+                            <span class="menu-item-tag">Family Pack</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Nashville Hot Chicken</h3>
+                            <p>Turn up the heat with this American Southern-style spicy glazed chicken—coated in a bold, smoky chili oil and served hot.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$24.99</span>
+                                <span class="original-price">$29.99</span>
+                            </div>
+                            <a href="chicken3.html" class="btn btn-primary">More Details</a>
+
+                        </div>
+                    </div>
+
+                    <!-- Chicken Strips -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-12.jpg" alt="Chicken Strips">
+                            <span class="menu-item-tag">New</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Chicken Strips</h3>
+                            <p>Tender strips of chicken, perfect for dipping in our special sauces.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$9.99</span>
+                                <span class="original-price">$12.99</span>
+                            </div>
+                            <a href="chicken2.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pizza Hut Menu -->
+            <div class="restaurant-menu" id="pizza-hut-menu">
+                <div class="menu-header">
+                    <h2>Pizza Hut Menu</h2>
+                    <button class="close-menu">&times;</button>
+                </div>
+                <div class="menu-items">
+                    <!-- Double Cheese Margherita i Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-13.jpg" alt="Double Cheese Margherita Pizza">
+                            <span class="menu-item-tag">Bestseller</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Double Cheese Margherita Pizza</h3>
+                            <p>Double the cheese, double the delight! Enjoy the classic Margherita experience with extra mozzarella for that ultimate cheesy pull.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$14.99</span>
+                                <span class="original-price">$17.99</span>
+                            </div>
+                            <a href="pizza1.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Margherita Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-14.jpg" alt="Margherita Pizza">
+                            <span class="menu-item-tag">Vegetarian</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Margherita Pizza</h3>
+                            <p>Simple yet delicious with tomato sauce, mozzarella cheese, and fresh basil.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$12.99</span>
+                                <span class="original-price">$15.99</span>
+                            </div>
+                            <a href="pizza1.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Peppy Panne Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-15.jpg" alt="Supreme Pizza">
+                            <span class="menu-item-tag">Popular</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Peppy Panner Pizza</h3>
+                            <p>A spicy and tangy treat featuring marinated paneer, crunchy capsicum, and zesty red paprika on a bed of cheese and tomato sauce.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$16.99</span>
+                                <span class="original-price">$19.99</span>
+                            </div>
+                            <a href="pizza3.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- BBQ Chicken Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-16.jpg"
+                                alt="Farmhouse Pizza">
+                            <span class="menu-item-tag">Chef's Special</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Farmhouse Pizza</h3>
+                            <p>A garden-fresh delight! Loaded with crisp capsicum, juicy tomatoes, sweet corn, mushrooms, and onions over tomato sauce and mozzarella cheese.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$15.99</span>
+                                <span class="original-price">$18.99</span>
+                            </div>
+                            <a href="pizza3.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- 7 Cheese Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-17.jpg"
+                                alt=">7 Cheese Pizza">
+                            <span class="menu-item-tag">Cheesy</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>7 Cheese Pizza</h3>
+                            <p>A heavenly blend of seven premium cheeses—mozzarella, cheddar, parmesan, gouda, feta, cream cheese, and provolone—melted into one rich, flavorful pizza. Perfect for true cheese fanatics!
+
+                                .</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$14.99</span>
+                                <span class="original-price">$17.99</span>
+                            </div>
+                            <a href="pizza2.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+
+                    <!-- Meat Lovers Pizza -->
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="https://pxdraft.com/wrap/foodie/assets/img/product-18.jpg"
+                                alt="Panner Makhani pizza">
+                            <span class="menu-item-tag">Panner Feast</span>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Panner Makhani Pizza</h3>
+                            <p>Inspired by North Indian flavors, this pizza features tender paneer chunks in a creamy makhani gravy, topped with mozzarella and a light Indian spice mix for a flavorful fusion.</p>
+                            <div class="menu-item-price">
+                                <span class="current-price">$17.99</span>
+                                <span class="original-price">$20.99</span>
+                            </div>
+                            <a href="pizza2.html" class="btn btn-primary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><img src="projects img/7540436.jpg" alt="Feasto Logo"> Feasto</h2>
+                <p>Delicious food delivered to your doorstep. Explore our wide range of cuisines and enjoy the best
+                    dining experience.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="restaurants.html">Restaurants</a></li>
+                        <li><a href="restaurants.html">Menu</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="restaurants.html">Online Order</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h3>Join Our Newsletter</h3>
+                <input type="email" placeholder="Enter your email">
+                <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
+                <p>Get weekly updates for new food items and offers.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feasto. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
+            </div>
+        </div>
+    </footer>
+
+    <script src="restaurants.js"></script>
+</body>
+
+</html>
