@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasto - Food Delivery</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Original CSS (loaded after Bootstrap so it can override Bootstrap styles) -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts and Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <header>
+        <div class="logo-container">
+            <img src="projects img/7540436.jpg" alt="Feasto Logo">
+            <h1>Feasto</h1>
+        </div>
+
+        <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="locationInput" placeholder="Enter your location">
+            </div>
+            <div class="search-box">
+                <i class="fas fa-utensils"></i>
+                <input type="text" id="restaurantInput" placeholder="Search for restaurants or cuisines">
+            </div>
+            <button class="btn" id="searchBtn">
+                <i class="fas fa-search"></i> Search
+            </button>
+
+        </div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="restaurants.html"><i class="fas fa-store"></i>Restaurant</a></li>
+                <li class="dropdown">
+                    <a href="#explore" class="dropdown-toggle"><i class="fas fa-compass"></i>Explore</a>
+                    <div class="dropdown-content">
+                        <!-- <a href="festoshoppage.html"><i class="fas fa-shopping-cart"></i> Shop</a> -->
+                        <a href="about.html"><i class="fas fa-users"></i> About Us</a>
+                        <!-- <a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a> -->
+                        <a href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                        <a href="register.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        <a href="feedback.html"><i class="fas fa-comment-alt"></i> Feedback</a>
+                    </div>
+                </li>
+                <li><a href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page1-container">
+        <div class="page1-content">
+            <span>Order Your Favorite Food with Ease 🍽️</span>
+            <h1>Experience Delicious Meals from Top Restaurants</h1>
+            <h5>Enjoy a seamless food ordering experience with our top-rated restaurants. From fast delivery to gourmet
+                dishes, we've got everything for your cravings.</h5>
+            <button class="order-btn">Order Now</button>
+        </div>
+        <div class="page1-img">
+            <img src="https://pxdraft.com/wrap/foodie/assets/img/home-banner-1.png" alt="Food Image">
+        </div>
+    </div>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Choose how you want to experience our delicious food</p>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/online-rder.jpg" alt="Order Online">
+                    <h3>Order Online</h3>
+                    <p>Stay Home and Order To Your Doorstep</p>
+                    <a href="restaurants.html" class="service-link">Order Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/dining.jpg" alt="Dining">
+                    <h3>Dining</h3>
+                    <p>View the city's favorite dining venues</p>
+                    <a href="dinout.html" class="service-link">Find Tables <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Restaurant Cards -->
+    <section class="restaurants-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Restaurants</h2>
+                <p>Discover the best restaurants in your area</p>
+            </div>
+            <div class="restaurants-grid" id="restaurantGrid">
+                <!-- Restaurant 1 -->
+                <div class="restaurant-card" data-name="Burger King" data-cuisine="Snacks Beverages"
+                    data-location="Delhi">
+                    <div class="restaurant-image">
+                        <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Burger King">
+                    </div>
+                    <div class="restaurant-info">
+                        <a href="restaurants.html">
+                            <h3>Burger King</h3>
+                            <div class="restaurant-meta">
+                                <p>Snacks, Beverages</p>
+                                <p>Location: Delhi</p>
+                                <span><i class="fas fa-wallet"></i> $12.99 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.2</span>
+                                <span class="reviews">200+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">60% OFF</span>
+                                <span class="offer-code">Use WELCOMEBACK</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Restaurant 2 -->
+                <div class="restaurant-card" data-name="Pizza Hut" data-cuisine="Pizza Italian" data-location="Mumbai">
+                    <div class="restaurant-image">
+                        <img src="projects img/WhatsApp Image 2025-05-06 at 01.01.15 (2).jpeg" alt="Pizza Hut">
+                    </div>
+                    <div class="restaurant-info">
+                        <a href="restaurants.html">
+                            <h3>Pizza Hut</h3>
+                            <div class="restaurant-meta">
+                                <p>Pizza, Italian</p>
+                                <p>Location: Mumbai</p>
+                                <span><i class="fas fa-wallet"></i> $12.99 for Two</span>
+
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.5</span>
+                                <span class="reviews">350+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">50% OFF</span>
+                                <span class="offer-code">Use FOODIE50</span>
+                            </div>
+
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <!-- Restaurant 3 -->
+                <div class="restaurant-card" data-name="KFC" data-cuisine="Chicken Fast Food" data-location="Bangalore">
+                    <div class="restaurant-image">
+                        <img src="projects img/WhatsApp Image 2025-05-06 at 01.01.15 (1).jpeg" alt="KFC">
+                    </div>
+                    <div class="restaurant-info">
+                        <a href="restaurants.html">
+                            <h3>KFC</h3>
+                            <div class="restaurant-meta">
+                                <p>Chicken, Fast Food</p>
+                                <p>Location: Bangalore</p>
+                                <span><i class="fas fa-wallet"></i> 12.99 for Two</span>
+                            </div>
+                            <div class="restaurant-rating">
+                                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                                <span class="reviews">180+ reviews</span>
+                            </div>
+                            <div class="restaurant-offer">
+                                <span class="offer-tag">30% OFF</span>
+                                <span class="offer-code">Use SUSHILOVE</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container2">
+            <div class="container2-img">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-1.png" alt="Order Process">
+            </div>
+            <div class="container2-content">
+                <h2>A Simple Process to Order Your Favorite Foods</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <p>Set Your Location</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <p>Choose the food you want to order</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <p>Confirm order with payment method</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <p>Within 30 minutes you will get your food</p>
+                        </div>
+                    </div>
+                </div>
+                <button><a href="restaurants.html">Order Food Now</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-dishes">
+        <div class="container">
+            <div class="section-title">Most Ordered Food</div>
+            <div class="underline"></div>
+
+            <div class="food-list">
+                <div class="food-card">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/product-1.jpg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Burger King</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins </div>
+                        <div class="food-price">$12.99</div>
+                    </div>
+                    <button class="add-button"><a href="restaurants.html">+ ADD</a></button>
+                </div>
+
+                <div class="food-card">
+                    <img src="projects img/WhatsApp Image 2025-05-06 at 01.01.15 (2).jpeg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">Pizza Hut</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins</div>
+                        <div class="food-price">$12.99</div>
+                    </div>
+                    <button class="add-button"><a href="restaurants.html">+ ADD</a></button>
+                </div>
+
+                <div class="food-card">
+                    <img src="projects img/WhatsApp Image 2025-05-06 at 01.01.15 (1).jpeg" alt="Food">
+                    <div class="food-info">
+                        <div class="food-title">KFC</div>
+                        <div class="food-meta">⭐ 4.9 • ⏳ 15 mins</div>
+                        <div class="food-price">$12.99</div>
+                    </div>
+                    <button class="add-button"><a href="restaurants.html">+ ADD</a></button>
+                </div>
+
+
+            </div>
+
+            <div class="view-all">
+                <button><a href="restaurants.html">View All</a></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="join-delivery">
+        <div class="container4">
+            <div class="text-content">
+                <h1>Want to Earn Extra? Join as a Delivery Partner</h1>
+                <p>Join our team of delivery partners and earn competitive pay with flexible hours. Be your own boss and
+                    deliver happiness to our customers' doorsteps.</p>
+                <button class="apply-btn"><a href="restaurants.html">Apply Now</a></button>
+            </div>
+            <div class="image-content">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-2.png" alt="Delivery Boy">
+            </div>
+        </div>
+    </section>
+
+    <section class="mobile-app">
+        <div class="container5">
+            <div class="image-content">
+                <img src="https://pxdraft.com/wrap/foodie/assets/img/shop-banner-3.png" alt="Mobile App">
+            </div>
+            <div class="text-content">
+                <h1>It's Easier to Order With Our Mobile App</h1>
+                <p>Download our mobile app for a faster, more convenient way to order your favorite food. Get exclusive
+                    app-only offers and track your delivery in real-time.</p>
+                <div class="apps">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/apple-store.png" alt="Apple Store">
+                    <img src="https://pxdraft.com/wrap/foodie/assets/img/effect/google-store.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2><img src="projects img/7540436.jpg" alt="Foodie Logo"> Feasto</h2>
+                <p>Bringing delicious food from the best restaurants straight to your doorstep. Fast, reliable, and
+                    always fresh.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="dinout.html">Restaurants</a></li>
+                        <li><a href="restaurants.html">Order Food</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="restaurants.html">Online Order</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <h3>Join Our Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit"><i class="fas fa-envelope"></i> SEND</button>
+                </form>
+                <p>Will send you weekly updates for better food offers.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Feasto. All Rights Reserved.</p>
+            <div class="payment-methods">
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Visa-Logo.png" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS Script to Filter -->
+    <script>
+        const searchBtn = document.getElementById('searchBtn');
+        const restaurantCards = document.querySelectorAll('.restaurant-card');
+
+        searchBtn.addEventListener('click', () => {
+            const locationVal = document.getElementById('locationInput').value.toLowerCase().trim();
+            const restaurantVal = document.getElementById('restaurantInput').value.toLowerCase().trim();
+
+            restaurantCards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const cuisine = card.getAttribute('data-cuisine').toLowerCase();
+                const location = card.getAttribute('data-location').toLowerCase();
+
+                const matchesLocation = location.includes(locationVal) || locationVal === '';
+                const matchesRestaurant = name.includes(restaurantVal) || cuisine.includes(restaurantVal) || restaurantVal === '';
+
+                if (matchesLocation && matchesRestaurant) {
+                    card.style.display = ""; // or "flex" if your layout uses flex
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Original script file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
