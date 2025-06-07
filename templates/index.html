@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyaan Ai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-robot"></i> Gyaan Ai </h1>
+            <p>Your personal voice-powered assistant</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="chat">
+                <i class="fas fa-comment-dots"></i> Chat
+            </button>
+            <button class="tab-btn" data-tab="games">
+                <i class="fas fa-gamepad"></i> Games
+            </button>
+            <button class="tab-btn" data-tab="notes">
+                <i class="fas fa-sticky-note"></i> Notes
+            </button>
+            <button class="tab-btn" data-tab="calculator">
+                <i class="fas fa-calculator"></i> Calculator
+            </button>
+            <button class="tab-btn" data-tab="weather">
+                <i class="fas fa-cloud-sun"></i> Weather
+            </button>
+            <button class="tab-btn" data-tab="settings">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+            <button class="tab-btn" data-tab="help">
+                <i class="fas fa-question-circle"></i> Help
+            </button>
+        </div>
+        
+        <!-- Chat Tab -->
+        <div id="chat" class="tab-content active">
+            <div class="chat-box" id="chatBox">
+                <div class="message-container assistant-container">
+                    <div class="assistant-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="assistant-message">
+                        Hello! I'm Gyaan Ai. How can I help you today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="status" id="status">Ready to listen</div>
+            
+            <div class="suggestion-chips">
+                <button class="chip" onclick="runCommand('what can you do')">What can you do?</button>
+                <button class="chip" onclick="runCommand('tell me a joke')">Tell a joke</button>
+                <button class="chip" onclick="runCommand('what time is it')">Current time</button>
+                <button class="chip" onclick="runCommand('open youtube')">Open YouTube</button>
+                <button class="chip" onclick="runCommand('play a game')">Play a game</button>
+                <button class="chip" onclick="runCommand('check weather')">Check weather</button>
+            </div>
+            
+            <div class="mic-container">
+                <button class="mic-button" id="micButton">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <p class="mic-label">Tap to speak</p>
+            </div>
+        </div>
+        
+        <!-- Games Tab -->
+        <div id="games" class="tab-content">
+            <div class="games-container" id="gamesContainer">
+                <div class="game-card" onclick="loadGame('number')">
+                    <div class="game-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3>Number Guessing</h3>
+                    <p>Guess a number between 1-10</p>
+                </div>
+                
+                <div class="game-card" onclick="loadGame('rps')">
+                    <div class="game-icon">
+                        <i class="fas fa-hand-rock"></i>
+                    </div>
+                    <h3>Rock Paper Scissors</h3>
+                    <p>Play the classic game</p>
+                </div>
+            </div>
+            
+            <div id="gameArea" class="game-area">
+                <div class="game-header">
+                    <button id="backToGames" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Back to Games
+                    </button>
+                    <h3 id="gameTitle">Select a game</h3>
+                </div>
+                <div id="gameContent" class="game-content">
+                    <p>Select a game from the options above to start playing!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notes Tab -->
+        <div id="notes" class="tab-content">
+            <div class="notes-container">
+                <h3>Quick Notes</h3>
+                <p>Speak and I'll write it down for you</p>
+                
+                <textarea id="notesText" placeholder="Your notes will appear here..."></textarea>
+                
+                <div class="notes-controls">
+                    <button id="startNotesBtn" class="control-button primary">
+                        <i class="fas fa-microphone"></i> Start Dictation
+                    </button>
+                    <button id="copyNotesBtn" class="control-button">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                    <button id="clearNotesBtn" class="control-button">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Calculator Tab -->
+        <div id="calculator" class="tab-content">
+            <div class="calculator-container"> 
+                <h3>Simple Calculator</h3>
+                <p>Perform basic calculations</p>
+                
+                <input type="text" id="calcDisplay" class="calculator-display" readonly value="0">
+                
+                <div class="calculator-buttons">
+                    <button class="calc-btn clear" onclick="clearCalc()">C</button>
+                    <button class="calc-btn" onclick="appendCalc('(')">(</button>
+                    <button class="calc-btn" onclick="appendCalc(')')">)</button>
+                    <button class="calc-btn operator" onclick="appendCalc('/')">/</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('7')">7</button>
+                    <button class="calc-btn" onclick="appendCalc('8')">8</button>
+                    <button class="calc-btn" onclick="appendCalc('9')">9</button>
+                    <button class="calc-btn operator" onclick="appendCalc('*')">×</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('4')">4</button>
+                    <button class="calc-btn" onclick="appendCalc('5')">5</button>
+                    <button class="calc-btn" onclick="appendCalc('6')">6</button>
+                    <button class="calc-btn operator" onclick="appendCalc('-')">-</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('1')">1</button>
+                    <button class="calc-btn" onclick="appendCalc('2')">2</button>
+                    <button class="calc-btn" onclick="appendCalc('3')">3</button>
+                    <button class="calc-btn operator" onclick="appendCalc('+')">+</button>
+                    
+                    <button class="calc-btn" onclick="appendCalc('0')">0</button>
+                    <button class="calc-btn" onclick="appendCalc('.')">.</button>
+                    <button class="calc-btn equals" onclick="calculateResult()">=</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Weather Tab -->
+        <div id="weather" class="tab-content">
+            <div class="weather-container">
+                <h3>Weather Forecast</h3>
+                <p>Check the current weather</p>
+                
+                <div class="weather-search">
+                    <input type="text" id="cityInput" placeholder="Enter city name">
+                    <button id="searchWeatherBtn"><i class="fas fa-search"></i> Search</button>
+                </div>
+                
+                <div id="weatherInfo" class="weather-info">
+                    <p>Enter a city name to check the weather</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Tab -->
+        <div id="settings" class="tab-content">
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3>Voice Settings</h3>
+                    
+                    <div class="setting-item">
+                        <label for="voiceRate">Voice Speed</label>
+                        <input type="range" id="voiceRate" min="0.5" max="2" step="0.1" value="1">
+                        <span id="voiceRateValue">1.0</span>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label for="voicePitch">Voice Pitch</label>
+                        <input type="range" id="voicePitch" min="0.5" max="2" step="0.1" value="1">
+                        <span id="voicePitchValue">1.0</span>
+                    </div>
+                    
+                    <div class="setting-item">
+                        <label for="voiceSelect">Voice</label>
+                        <select id="voiceSelect">
+                            <option value="">Default Voice</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <h3>Theme</h3>
+                    <div class="theme-options">
+                        <button class="theme-option active" data-theme="light">
+                            <div class="theme-preview light"></div>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-option" data-theme="dark">
+                            <div class="theme-preview dark"></div>
+                            <span>Dark</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Help Tab -->
+        <div id="help" class="tab-content">
+            <div class="help-container">
+                <h3>Help & Commands</h3>
+                <p>Here's what I can do:</p>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-comment"></i> Voice Commands</h3>
+                    <ul>
+                        <li><strong>Hello / Hi</strong> - Greet the assistant</li>
+                        <li><strong>What time is it?</strong> - Get the current time</li>
+                        <li><strong>What day is it?</strong> - Get the current date</li>
+                        <li><strong>Tell me a joke</strong> - Hear a random joke</li>
+                        <li><strong>What can you do?</strong> - Learn about my capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-globe"></i> Web Commands</h3>
+                    <ul>
+                        <li><strong>Open [website]</strong> - Opens a website (YouTube, Google, etc.)</li>
+                        <li><strong>Search for [query]</strong> - Searches Google</li>
+                        <li><strong>Check weather</strong> - Opens weather tab</li>
+                    </ul>
+                </div>
+                
+                <div class="help-section">
+                    <h3><i class="fas fa-gamepad"></i> Games & Tools</h3>
+                    <ul>
+                        <li><strong>Play a game</strong> - Opens the games section</li>
+                        <li><strong>Take notes</strong> - Opens the notes section</li>
+                        <li><strong>Open calculator</strong> - Opens the calculator</li>
+                        <li><strong>Check weather</strong> - Opens the weather section</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
